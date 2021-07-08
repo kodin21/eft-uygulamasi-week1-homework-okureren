@@ -1,5 +1,5 @@
 function startTimer(duration, display) {
-    var timer = duration, minutes, seconds;
+    let timer = duration, minutes, seconds;
     setInterval(function () {
         minutes = parseInt(timer / 60, 10);
         seconds = parseInt(timer % 60, 10);
@@ -15,16 +15,16 @@ function startTimer(duration, display) {
     }, 1000);
 }
 function refreshPage(saniye) {
-    var t;
+    let t;
     t = parseInt(Math.floor(saniye * 1000)); // Saniyeyi milisaniyeye dönüştürdüm
     setInterval('location.reload(false)', t); // setInterval bir fonksiyonu t milisaniye arayla sürekli olarak çalıştırmak için kullanılıyor
 }
 refreshPage(120);
 
 window.onload = function () {
-    var fiveMinutes = 60 * 2,
+    let twoMinutes = 60 * 2,
         display = document.querySelector('#time');
-    startTimer(fiveMinutes, display);
+    startTimer(twoMinutes, display);
 };
 
 const accounts = [
