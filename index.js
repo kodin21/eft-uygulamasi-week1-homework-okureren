@@ -1,4 +1,4 @@
-import { name } from './example-other-file';
+import { name } from './user_information.js';
 
 console.log('Javascriptinizi buraya yazabilirsiniz')
 
