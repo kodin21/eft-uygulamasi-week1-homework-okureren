@@ -13,9 +13,9 @@ function startTimer(duration, display) {
             timer = duration;
         }
     }, 1000);
-    function refreshPage(saniye) {
+    function refreshPage(sec) {
         let t;
-        t = parseInt(Math.floor(saniye * 1000)); // Saniyeyi milisaniyeye dönüştürdüm
+        t = parseInt(Math.floor(sec * 1000)); // Saniyeyi milisaniyeye dönüştürdüm
         setInterval('location.reload(false)', t); // setInterval bir fonksiyonu t milisaniye arayla sürekli olarak çalıştırmak için kullanılıyor
     }
     refreshPage(120);
@@ -27,6 +27,7 @@ window.onload = function () {
     startTimer(twoMinutes, display);
 };
 
+// Our Accounts
 const accounts = [
     {
         iban: 'trxx yyyy xxxx yyyy',
@@ -42,6 +43,7 @@ const accounts = [
     }
 ];
 
+// Other Accounts
 const otherAccounts = [
     {
         name: 'Alıcı Hesap1',
@@ -64,6 +66,7 @@ const otherAccounts = [
 //     accounts
 // };
 
+// Dom Manuplation
 let hesap1 = document.querySelector("#hsp1");
 const firstAccount = parseFloat(accounts[0].balance)
 hesap1.innerHTML = `Hesap1 Bakiyeniz: ${firstAccount}`;
@@ -88,10 +91,7 @@ let alicihesap3 = document.querySelector("#alicihsp3");
 const otherAccount3 = `${otherAccounts[2].name}, ${otherAccounts[2].iban}`
 alicihesap3.innerHTML = `${otherAccount3}`;
 
-/*
-Selected kısmında fonksiyon kullanmak gerekirse buraya geri dön.
- function selectedAccount() {}
- */
+
 
 let selectedAcc = document.querySelector("#bankAcc");
 let selectedOtherAcc = document.querySelector("#otherBankAcc")
@@ -101,7 +101,7 @@ let balance = document.querySelector("#tutar");
 let button = document.querySelector("#buton")
 
 
-
+//define limit
 let limit = firstAccount
 const changeAcc = () => {
     let x = selectedAcc.value;
@@ -119,6 +119,7 @@ const changeOtherBankAcc = () => {
     alert(`${y} alıcısını seçtiniz`)
 }
 
+// Conditions and Messages
 function limiter(input) {
     console.log(limit);
     if (input.value < 0) input.value = 0;
