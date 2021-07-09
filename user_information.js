@@ -13,13 +13,13 @@ function startTimer(duration, display) {
             timer = duration;
         }
     }, 1000);
+    function refreshPage(saniye) {
+        let t;
+        t = parseInt(Math.floor(saniye * 1000)); // Saniyeyi milisaniyeye dönüştürdüm
+        setInterval('location.reload(false)', t); // setInterval bir fonksiyonu t milisaniye arayla sürekli olarak çalıştırmak için kullanılıyor
+    }
+    refreshPage(120);
 }
-function refreshPage(saniye) {
-    let t;
-    t = parseInt(Math.floor(saniye * 1000)); // Saniyeyi milisaniyeye dönüştürdüm
-    setInterval('location.reload(false)', t); // setInterval bir fonksiyonu t milisaniye arayla sürekli olarak çalıştırmak için kullanılıyor
-}
-refreshPage(120);
 
 window.onload = function () {
     let twoMinutes = 60 * 2,
